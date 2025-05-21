@@ -19,7 +19,8 @@ class UiHelper {
       style: TextStyle(
         fontSize: fontSize,
         fontFamily: fontFamily ?? "regular",
-        color: color ??
+        color:
+            color ??
             (Theme.of(context).brightness == Brightness.dark
                 ? AppColors.textdarkmode
                 : AppColors.textlightmode),
@@ -55,33 +56,42 @@ class UiHelper {
       ),
     );
   }
-  static CustomTextField({required TextEditingController contrller,required String text,required TextInputType textinputtype,required BuildContext context})
-  {
+
+  static CustomTextField({
+    required TextEditingController contrller,
+    required String text,
+    required TextInputType textinputtype,
+    required BuildContext context,
+    required IconData icondata,
+  }) {
     return Container(
       height: 45,
-      width: 350,
-      decoration: BoxDecoration( 
-        color: Theme.of(context).brightness == Brightness.dark
-         ? AppColors.containerdarkmode
-         :AppColors.containerlightmode,
-         borderRadius: BorderRadius.circular(3)
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextField(
-          controller: contrller,
-          keyboardType: textinputtype,
-          decoration: InputDecoration(
-            hintText: text,
-            hintStyle: TextStyle(
-              color: Theme.of(context).brightness == Brightness.dark?
-             AppColors.hintdarkmode:AppColors.hintkightmode,fontSize:14 ),
-            border: InputBorder.none
-          ),
-        
-        ),
+      width: 360,
+      decoration: BoxDecoration(
+        color:
+            Theme.of(context).brightness == Brightness.dark
+                ? AppColors.containerdarkmode
+                : AppColors.containerlightmode,
+        borderRadius: BorderRadius.circular(7),
       ),
 
+      child: TextField(
+        controller: contrller,
+        keyboardType: textinputtype,
+        decoration: InputDecoration(
+          hintText: text,
+          prefixIcon: Icon(icondata, color: AppColors.iconlight),
+          prefix: Icon(icondata),
+          hintStyle: TextStyle(
+            color:
+                Theme.of(context).brightness == Brightness.dark
+                    ? AppColors.hintdarkmode
+                    : AppColors.hintkightmode,
+            fontSize: 14,
+          ),
+          border: InputBorder.none,
+        ),
+      ),
     );
   }
 }

@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit,Themestates>(
       builder: (context, state) {
+        
         return MaterialApp(
         title: 'Message App',
         debugShowCheckedModeBanner: false,

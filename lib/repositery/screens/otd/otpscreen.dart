@@ -6,6 +6,8 @@ import 'package:pinput/pinput.dart';
 
 class OTPScreen extends StatelessWidget {
   TextEditingController otpController = TextEditingController();
+
+  OTPScreen({super.key});
   
 
   @override

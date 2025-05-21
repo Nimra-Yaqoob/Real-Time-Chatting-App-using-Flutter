@@ -7,6 +7,8 @@ import 'package:massenger_app/repositery/screens/widgets/uihelper.dart';
 class LoginScreen extends StatelessWidget {
   TextEditingController phoneController=TextEditingController();
 
+  LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) { 
     return Scaffold(
@@ -42,7 +44,9 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  UiHelper.CustomTextField(contrller: phoneController, text: "Phone Number", textinputtype: TextInputType.number, context: context)
+                  UiHelper.CustomTextField(contrller: phoneController, text: "Phone Number", 
+                  textinputtype: TextInputType.number, context: context,icondata: Icons.phone
+                  )
           ],  
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:massenger_app/domain/constants/appcolors.dart';
+import 'package:massenger_app/repositery/screens/bottomnav/bottomnavigationscreen.dart';
 import 'package:massenger_app/repositery/screens/widgets/uihelper.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -41,21 +42,28 @@ class ProfileScreen extends StatelessWidget {
               contrller: firstnameController,
               text: "First Name (Required)",
               textinputtype: TextInputType.name,
-              context: context,
-            
+              context: context,icondata: Icons.person,
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             UiHelper.CustomTextField(
               contrller: lastnameController,
               text: "Last Name (Required)",
               textinputtype: TextInputType.name,
-              context: context,
+              context: context,icondata: CupertinoIcons.person_2,
             ),
           ],
         ),
       ),
-      floatingActionButtonLocation:FloatingActionButtonLocation.centerFloat ,
-      floatingActionButton: UiHelper.customButton(buttonName: "Sava", callback: (){}),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: UiHelper.customButton(
+        buttonName: "Sava",
+        callback: () { 
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Bottomnavigationscreen()),
+          );
+        },
+      ),
     );
   }
 }
